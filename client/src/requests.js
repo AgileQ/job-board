@@ -1,5 +1,18 @@
 const endpointURL = "http://localhost:9000/graphql";
 
+async function graphqlRequest(query, variables) {
+  const response = await fetch(endpointURL, {
+    method: "POST",
+    headers: { "content-type": "application/json" },
+    body: JSON.stringify({
+      query,
+      variables,
+    }),
+  });
+  const responseBody = await response.json();
+  return responseBody.data.job;
+}
+
 export async function loadJob(id) {
   const response = await fetch(endpointURL, {
     method: "POST",
