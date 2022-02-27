@@ -5,21 +5,22 @@ export async function loadJob(id) {
     method: "POST",
     headers: { "content-type": "application/json" },
     body: JSON.stringify({
-      query: `query JobQuery($id, ID!){
+      query: `query JobQuery($id: ID!){
         job(id: $id) {
           id
           title
-          company {
-            id
+          company{
+            id 
             name
           }
+      description  
         }
       }`,
       variables: { id },
     }),
   });
   const responseBody = await response.json();
-  return responseBody.data.jobs;
+  return responseBody.data.job;
 }
 
 export async function loadJobs() {
