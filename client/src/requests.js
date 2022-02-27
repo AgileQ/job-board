@@ -1,4 +1,4 @@
-const endpointURL = "http//localhost:9000/graphql";
+const endpointURL = "http://localhost:9000/graphql";
 
 export async function loadJobs() {
   const response = await fetch(endpointURL, {
