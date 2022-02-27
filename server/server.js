@@ -28,7 +28,7 @@ const typeDefs = gql(fs.readFileSync("./schema.graphql", { encoding: "utf8" }));
 const resolvers = require("./resolvers");
 const { urlencoded } = require("body-parser");
 const apolloServer = new ApolloServer({ typeDefs, resolvers });
-apolloServer.applyMiddleware({ app, path: "/graphgl" });
+apolloServer.applyMiddleware({ app, path: "/graphql" });
 
 app.post("/login", (req, res) => {
   const { email, password } = req.body;
