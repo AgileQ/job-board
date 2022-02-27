@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { JobList } from "./JobList";
 import { loadJobs } from "./requests";
+//const { jobs } = require('./fake-data');
 
 export class JobBoard extends Component {
   constructor(props) {

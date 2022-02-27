@@ -5,7 +5,7 @@ const Query = {
 };
 
 const Job = {
-  company: (job) => db.companies.get(job.companyId),
+  company: (job) => db.companies.get(job.companyId)
 };
 
 module.exports = { Query, Job };
